@@ -24,7 +24,7 @@ public class NetworkChecker {
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
 
         if(activeNetworkInfo != null && activeNetworkInfo.isConnected()){
-            Toast.makeText(activity, "This is my Toast message!",
+            Toast.makeText(activity, "Internet connection detected.",
                     Toast.LENGTH_LONG).show();
         }else{
             openMessage();
@@ -36,7 +36,7 @@ public class NetworkChecker {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 
         // Set the message show for the Alert time
-        builder.setMessage("Internet connection is disconnected");
+        builder.setMessage("No internet connection. Please check your connection and try again.");
 
         // Set Alert Title
         builder.setTitle("Alert !");
@@ -51,7 +51,7 @@ public class NetworkChecker {
 //        });
 
         // Set the Negative button with No name Lambda OnClickListener method is use of DialogInterface interface.
-        builder.setNegativeButton("Okay", (DialogInterface.OnClickListener) (dialog, which) -> {
+        builder.setNegativeButton("OK", (DialogInterface.OnClickListener) (dialog, which) -> {
             // If user click no then dialog box is canceled.
             dialog.cancel();
         });
